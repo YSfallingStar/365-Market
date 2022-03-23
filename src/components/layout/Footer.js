@@ -19,7 +19,7 @@ const Copyright = () => {
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ background: 'linear-gradient(to right bottom, #ff93dd, #2998f6)', py: 6 }}>
+    <Box component="footer" sx={{ background: 'linear-gradient(to right bottom, #ff93dd, #2998f6)', py: 3}}>
       <Container maxWidth="lg">
         <Typography variant="h6" align="center" gutterBottom>
           365 일장

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../../asset/styles/Layout.css'
 import { Outlet } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
 import { Modal, ModalTitle, ModalContent } from './Modal';
@@ -55,9 +56,9 @@ const Layout = () => {
   }
 
   return (
-    <div>
+    <div className='wrapper'>
       <Header topMenu={topMenu}/>
-      <main>
+      <main className='content'>
         <Outlet/>
         {/* 모달 */}
         <Modal
