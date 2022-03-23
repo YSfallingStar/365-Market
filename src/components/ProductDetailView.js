@@ -44,7 +44,7 @@ const ProductDetailView = () => {
                             direction="row"
                             alignItems="center"
                         >
-                            <Avatar src="/static/images/t1.png" />
+                            <Avatar src="../asset/images/t1.png" />
                             &nbsp;
                             <Typography variant="subtitle1" gutterBottom component="div" style={{ margin: "0" }}>
                                 닉네임

@@ -9,7 +9,7 @@ const Location = () => {
       justifyContent="center"
       alignItems="center"
     >
-
+      
     </Grid>
   );
 };

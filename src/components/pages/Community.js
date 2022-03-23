@@ -19,7 +19,7 @@ const rows = [
   createData(2, '공지', '커뮤니티 이용 안내', '관리자', 10, '2022-03-21'),
   createData(3, '질문', '프로필 수정 어디서 하나요?', '캐럿', 2,'2022-03-22'),
   createData(4, '생활공유', '이번 주 할인 정보 공유', '캐럿', 5,'2022-03-23'),
-  createData(5, '지역소식', '벚꽃이 피었네요', '장범준', 3,'2022-03-24'),
+  createData(5, '지역소식', '벚꽃 놀이', '장범준', 3,'2022-03-24'),
 ];
 
 const Community = () => {
@@ -28,7 +28,7 @@ const Community = () => {
       <Button endIcon={<CreateIcon/>} variant='contained'>글쓰기</Button>
       <TableContainer component={Paper} sx={{mt: 2}}>
       <Table sx={{ minWidth: 650 }} aria-label="coummunity">
-          <TableHead sx={{bgcolor: 'secondary.main'}}>
+          <TableHead>
             <TableRow>
               <TableCell>번호</TableCell>
               <TableCell>카테고리</TableCell>
