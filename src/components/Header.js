@@ -9,10 +9,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import logo from '../asset/headerLogo.png';
-import { height } from '@mui/system';
-
-const pages = ['홈', '커뮤니티', '채팅', '마이페이지'];
+import logo from '../asset/images/headerLogo.png';
+  
+const pages = ['home', 'community', 'cahtting', 'myPage'];
 
 const Header = ({topMenu}) => {
   const [anchorElNav, setAnchorElNav] = useState(null);

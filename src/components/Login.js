@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import logo from '../asset/logo.png';
+import logo from '../asset/images/logo.png';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -14,8 +13,9 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Divider from '@mui/material/Divider';
 
-const Login = () => {
+const Login = ({handleClickOpen}) => {
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -103,22 +103,20 @@ const Login = () => {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2}}
             >
               로그인 
             </Button>
-            <Grid container sx={{justifyContent: 'center'}}>
-              <Grid item xs>
-                <Link href="#" variant="h6" color="secondary">
-                  비밀번호 찾기
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="h6" color="secondary">
-                  회원가입
-                </Link>
-              </Grid>
-            </Grid>
+            <Divider />
+            <Button 
+              variant='contained' 
+              color="secondary"
+              onClick={() => {handleClickOpen("register")}}
+              fullWidth
+              //sx={{background: 'linear-gradient(to right bottom, #ff93dd, #2998f6)'}}
+            >
+              회원가입
+            </Button>
           </Box>
         </Box>
       </Grid>

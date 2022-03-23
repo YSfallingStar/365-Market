@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import logo from '../asset/logo.png';
+import logo from '../asset/images/logo.png';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -15,7 +14,7 @@ import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-const Register = () => {
+const Register = ({handleClickOpen}) => {
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -148,9 +147,14 @@ const Register = () => {
             >
               가입 
             </Button>
-            <Link href="#" variant="h6" color="secondary">
+            <Button 
+              variant='contained' 
+              color="secondary"
+              onClick={() => {handleClickOpen("login")}}
+              fullWidth
+            >
               로그인
-            </Link>
+            </Button>
           </Box>
         </Box>
       </Grid>
