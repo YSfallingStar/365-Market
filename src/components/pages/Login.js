@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import logo from '../asset/logo.png';
+import logo from '../../asset/images/logo.png';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -14,15 +13,13 @@ import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Divider from '@mui/material/Divider';
 
-const Register = () => {
+const Login = ({handleClickOpen}) => {
   const [values, setValues] = useState({
-    name: '',
     email: '',
     password: '',
-    confirmPassword: '',
     showPassword: false,
-    showConfirmPassword: false,
   });
 
   const handleChange = (prop) => (event) => {
@@ -35,18 +32,11 @@ const Register = () => {
       showPassword: !values.showPassword,
     });
   };
-  
-  const handleClickShowConfirmPassword = () => {
-    setValues({
-      ...values,
-      showConfirmPassword: !values.showConfirmPassword,
-    });
-  };
 
   const onSubmit = (event) => {
     event.preventDefault();
   }
-  
+
   return (
     <Grid container component="main" sx={{ height: '100%'}}>
       <CssBaseline />
@@ -75,19 +65,9 @@ const Register = () => {
           }}
         >
           <Typography component="h1" variant="h5">
-            회원가입
+            로그인
           </Typography>
           <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 1 }}>
-            <FormControl sx={{width: '90%'}} margin="normal">
-              <InputLabel htmlFor="name">닉네임</InputLabel>
-              <Input
-                id="name"
-                type='text'
-                value={values.name}
-                onChange={handleChange('name')}
-                label="닉네임"
-              />
-            </FormControl>
             <FormControl sx={{width: '90%'}} margin="normal">
               <InputLabel htmlFor="email">이메일</InputLabel>
               <Input
@@ -119,38 +99,24 @@ const Register = () => {
                 label="비밀번호"
               />
             </FormControl>
-            <FormControl sx={{width: '90%'}} margin="normal">
-              <InputLabel htmlFor="confirmPassword">비밀번호 확인</InputLabel>
-              <Input
-                id="confirmPassword"
-                type={values.showConfirmPassword ? 'text' : 'password'}
-                value={values.confirmPassword}
-                onChange={handleChange('confirmPassword')}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowConfirmPassword}
-                      edge="end"
-                    >
-                      {values.showConfirmPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-                label="비밀번호 확인"
-              />
-            </FormControl>    
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2}}
             >
-              가입 
+              로그인 
             </Button>
-            <Link href="#" variant="h6" color="secondary">
-              로그인
-            </Link>
+            <Divider />
+            <Button 
+              variant='contained' 
+              color="secondary"
+              onClick={() => {handleClickOpen("register")}}
+              fullWidth
+              //sx={{background: 'linear-gradient(to right bottom, #ff93dd, #2998f6)'}}
+            >
+              회원가입
+            </Button>
           </Box>
         </Box>
       </Grid>
@@ -158,4 +124,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

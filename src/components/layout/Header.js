@@ -7,15 +7,32 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import logo from '../asset/headerLogo.png';
-import { height } from '@mui/system';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab'
+import { Link } from 'react-router-dom';
+import logo from '../../asset/images/headerLogo.png';
 
-const pages = ['홈', '커뮤니티', '채팅', '마이페이지'];
+const pages = [
+  { id: 0, title: '홈', url: '/'},
+  { id: 1, title: '커뮤니티', url: '/community'},
+  { id: 2, title: '채팅', url: '/chat'},
+  { id: 3, title: '마이페이지', url: '/myPage'},
+];
+
+const LinkTab = (props) => {
+  return (
+    <Link to={props.url}>
+      <Tab
+        {...props}
+      />
+    </Link>
+  );
+}
 
 const Header = ({topMenu}) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -24,6 +41,10 @@ const Header = ({topMenu}) => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
+  const handleTabChange = (event, newTab) => {
+    setSelectedTab(newTab);
+  }
 
   return (
     <AppBar position="static" color="transparent">
@@ -63,29 +84,27 @@ const Header = ({topMenu}) => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
+          {/* 반응형: md이상 */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, height: '50px'}}
           >
             <img src={logo} alt="logo" />
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
+          <Tabs 
+            value={selectedTab}
+            onChange={handleTabChange}
+            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}
+          >
             {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ m: 2, display: 'block' }}
-                color="neutral"
-              >
-                {page}
-              </Button>
+              <LinkTab key={page.id} label={page.title} url={page.url} />
             ))}
-          </Box>
-
+          </Tabs>
+          {/* 오른쪽 메뉴 */}
           <Box sx={{ flexGrow: 0 }}>
             {topMenu()}
           </Box>
