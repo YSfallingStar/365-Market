@@ -24,9 +24,6 @@ const LinkTab = (props) => {
   return (
     <Link to={props.url}>
       <Tab
-        onClick={(event) => {
-          event.preventDefault();
-        }}
         {...props}
       />
     </Link>
