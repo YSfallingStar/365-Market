@@ -10,7 +10,7 @@ import Register from './../pages/Register';
 import Location from '../pages/Location';
 
 const Layout = () => {
-  const [isLogined, setIsLogined] = useState(true); // 로그인 여부
+  const [isLogined, setIsLogined] = useState(false); // 로그인 여부
   const [location, setLocation] = useState('지역'); // 선택한 지역
   const [condition, setCondition] = useState(""); // ModalContent 결정하는 state
   const [open, setOpen] = useState(false); // 모달
