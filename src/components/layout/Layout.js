@@ -7,11 +7,13 @@ import Header from './Header';
 import Footer from './Footer';
 import Login from './../pages/Login';
 import Register from './../pages/Register';
+import Location from '../pages/Location';
 
 const Layout = () => {
-  const [isLogined, setIsLogined] = useState(false);
+  const [isLogined, setIsLogined] = useState(true); // 로그인 여부
+  const [location, setLocation] = useState('지역'); // 선택한 지역
   const [condition, setCondition] = useState(""); // ModalContent 결정하는 state
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // 모달
 
   // 모달 이벤트
   const handleClickOpen = (prop) => {
@@ -19,6 +21,12 @@ const Layout = () => {
     setCondition(prop);
   }
   const handleClose = () => setOpen(false);
+
+  // 지역 선택
+  const handleLocationClick = (prop) => {
+    setOpen(false);
+    setLocation(prop);
+  }
 
   // topMenu 오른쪽 영역
   const topMenu = () => {
@@ -29,7 +37,7 @@ const Layout = () => {
             variant='contained'
             onClick={() => {handleClickOpen("location")}}
           >
-            지역
+            {location}
           </Button>
         </Box>
       )
@@ -65,18 +73,22 @@ const Layout = () => {
           onClose={handleClose}
           aria-labelledby="modal"
           open={open}
+          maxWidth='md'
+          fullWidth={true}
         >
           <ModalTitle 
             id="modal" 
             onClose={handleClose}
-            sx={{mb: 3}}
-          />
+            //sx={{mb: 3}}
+          >
+            {condition === 'location' ? '지역 선택' : null}
+          </ModalTitle>
           <ModalContent>
             {
               (function() {
                 if(condition === 'login') return <Login handleClickOpen={handleClickOpen}/>
                 if(condition === 'register') return <Register handleClickOpen={handleClickOpen}/>
-                //if(condition === 'location') return <Location/>
+                if(condition === 'location') return <Location handleLocationClick={handleLocationClick}/>
               })()
             }
           </ModalContent>
