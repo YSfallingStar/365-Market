@@ -14,6 +14,13 @@ import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+// dummy data
+const data = {
+  name: '캐럿',
+  email: '365@365.com',
+  password: 'test1234'
+}
+
 const Register = ({handleClickOpen}) => {
   const [values, setValues] = useState({
     name: '',
@@ -44,6 +51,8 @@ const Register = ({handleClickOpen}) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    alert(`${values.name}님 365 일장에 오신 걸 환영합니다.`);
+    handleClickOpen("login");
   }
   
   return (
