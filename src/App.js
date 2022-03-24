@@ -5,17 +5,21 @@ import { Route, Routes } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './components/pages/Home';
 import Community from './components/pages/Community';
+import Mypage from './components/pages/Mypage';
+import Chat from './components/pages/Chat';
 
 function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Routes>
-          <Route element={<Layout/>}>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/community" element={<Community/>}/>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/community" element={<Community />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/myPage" element={<Mypage />} />
           </Route>
-        </Routes> 
+        </Routes>
       </ThemeProvider>
     </div>
   );
