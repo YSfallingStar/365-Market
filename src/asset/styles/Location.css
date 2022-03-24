@@ -1,0 +1,5 @@
+.location:hover {
+	color: #2998f6;
+	border-color: #2998f6;
+	cursor: pointer;
+}

@@ -50,9 +50,11 @@ const Header = ({topMenu}) => {
     <AppBar position="static" color="transparent">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, height: '50px'}}
+          <Box 
+            onClick={() => window.location.href='/'}
+            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, height: '50px', cursor: 'pointer'}}
           >
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo"/>
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -85,13 +87,17 @@ const Header = ({topMenu}) => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.title}</Typography>
+                  <Link to={page.url}>
+                    <Typography textAlign="center">{page.title}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           {/* 반응형: md이상 */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, height: '50px'}}
+          <Box 
+            onClick={() => window.location.href='/'}
+            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, height: '50px'}}
           >
             <img src={logo} alt="logo" />
           </Box>
