@@ -1,12 +1,15 @@
 import React from 'react';
-import Prototypes from "../../Prototypes";
-import Orders from "../../Orders";
+import Prototypes from "./Prototypes";
+import Orders from "./Orders";
+import AppStateProvider from './../../providers/AppStateProvider';
 
 const Home = () => {
   return (
     <div>
-      <Prototypes />
+      <AppStateProvider>
+        <Prototypes />
         <Orders />
+      </AppStateProvider>
     </div>
   );
 };

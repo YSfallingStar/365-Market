@@ -6,7 +6,6 @@ import Layout from './components/layout/Layout';
 import Home from './components/pages/Home';
 import Community from './components/pages/Community';
 
-
 function App() {
   return (
     <div className="App">
