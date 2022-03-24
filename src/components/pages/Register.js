@@ -49,6 +49,16 @@ const Register = ({handleClickOpen}) => {
     });
   };
 
+  const handleCheckName = () => {
+    if(data.name === values.name) alert('이미 사용중인 이름입니다.');
+    else alert('사용 가능한 이름입니다.')
+  }
+  
+  const handleCheckEmail = () => {
+    if(data.email === values.email) alert('이미 사용중인 이메일입니다.');
+    else alert('사용 가능한 이메일입니다.')
+  }
+
   const onSubmit = (event) => {
     event.preventDefault();
     alert(`${values.name}님 365 일장에 오신 걸 환영합니다.`);
@@ -86,7 +96,7 @@ const Register = ({handleClickOpen}) => {
             회원가입
           </Typography>
           <Box component="form" noValidate onSubmit={onSubmit} sx={{ mt: 1 }}>
-            <FormControl sx={{width: '90%'}} margin="normal">
+            <FormControl sx={{width: '75%'}} margin="normal">
               <InputLabel htmlFor="name">닉네임</InputLabel>
               <Input
                 id="name"
@@ -94,9 +104,18 @@ const Register = ({handleClickOpen}) => {
                 value={values.name}
                 onChange={handleChange('name')}
                 label="닉네임"
+                endAdornment={
+                  <Button
+                    variant="outlined"
+                    onClick={handleCheckName}
+                    sx={{ml:2}}
+                  >
+                    중복 확인
+                  </Button>
+                }
               />
             </FormControl>
-            <FormControl sx={{width: '90%'}} margin="normal">
+            <FormControl sx={{width: '75%'}} margin="normal">
               <InputLabel htmlFor="email">이메일</InputLabel>
               <Input
                 id="email"
@@ -104,6 +123,15 @@ const Register = ({handleClickOpen}) => {
                 value={values.email}
                 onChange={handleChange('email')}
                 label="이메일"
+                endAdornment={
+                  <Button
+                    variant="outlined"
+                    onClick={handleCheckEmail}
+                    sx={{ml:2}}
+                  >
+                    중복 확인
+                  </Button>
+                }
               />
             </FormControl>
             <FormControl sx={{width: '90%'}} margin="normal">

@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Login from './../pages/Login';
 import Register from './../pages/Register';
 import Location from '../pages/Location';
+import Chat from './../pages/Chat';
 
 const Layout = () => {
   const [isLogined, setIsLogined] = useState(false); // 로그인 여부
@@ -67,7 +68,7 @@ const Layout = () => {
     <div className='wrapper'>
       <Header topMenu={topMenu}/>
       <main className='content'>
-        <Outlet/>
+        <Outlet handleClickOpen={handleClickOpen}/>
         {/* 모달 */}
         <Modal
           onClose={handleClose}
@@ -82,6 +83,8 @@ const Layout = () => {
             //sx={{mb: 3}}
           >
             {condition === 'location' ? '지역 선택' : null}
+            {condition === 'profile' ? '프로필 설정': null}
+            {condition === 'chat' ? '채팅': null}
           </ModalTitle>
           <ModalContent>
             {
@@ -89,6 +92,7 @@ const Layout = () => {
                 if(condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
                 if(condition === 'register') return <Register handleClickOpen={handleClickOpen}/>
                 if(condition === 'location') return <Location handleLocationClick={handleLocationClick}/>
+                if(condition === 'chat') return <Chat/>
               })()
             }
           </ModalContent>
