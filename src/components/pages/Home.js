@@ -5,7 +5,7 @@ import AppStateProvider from './../../providers/AppStateProvider';
 
 const Home = () => {
   return (
-    <div>
+    <div style={{margin: '50px 100px'}}>
       <AppStateProvider>
         <Prototypes />
         <Orders />

@@ -15,7 +15,13 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Divider from '@mui/material/Divider';
 
-const Login = ({handleClickOpen}) => {
+// dummy data
+const data = {
+  email: '365@365.com',
+  password: 'test1234'
+}
+
+const Login = ({handleClickOpen, setIsLogined, handleClose}) => {
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -35,6 +41,11 @@ const Login = ({handleClickOpen}) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    if(values.email === data.email && values.password === data.password) {
+      setIsLogined(true);
+      handleClose()
+    }else
+      alert('이메일 또는 비밀번호를 확인해주세요.')
   }
 
   return (
