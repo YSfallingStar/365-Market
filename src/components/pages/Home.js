@@ -1,10 +1,12 @@
 import React from 'react';
+import Prototypes from "../../Prototypes";
+import Orders from "../../Orders";
 
 const Home = () => {
   return (
     <div>
-      <h1>홈</h1>
-      홈 화면 입니다.
+      <Prototypes />
+        <Orders />
     </div>
   );
 };
