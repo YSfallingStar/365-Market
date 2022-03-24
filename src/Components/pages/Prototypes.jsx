@@ -1,5 +1,5 @@
-import useActions from "../hooks/useActions";
-import usePrototypes from "../hooks/usePrototypes";
+import useActions from "../../hooks/useActions";
+import usePrototypes from "../../hooks/usePrototypes";
 
 export default function Prototypes() {
   const prototypes = usePrototypes();
