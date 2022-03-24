@@ -18,7 +18,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 const data = {
   name: '캐럿',
   email: '365@365.com',
-  password: 'test1234'
 }
 
 const Register = ({handleClickOpen}) => {
