@@ -39,12 +39,12 @@ export default function Prototypes() {
                     className="btn btn--primary float--right"
                     onClick={click}
                   >
-                    <i className="icon icon--plus" />
+                    <div className="content">구매</div>
                   </div>
 
                   {title}
                 </div>
-                <p className="prototype__price">$ {price}</p>
+                <p className="prototype__price">{price}원</p>
                 <p className="prototype__desc">{desc}</p>
               </div>
             </div>
