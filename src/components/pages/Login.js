@@ -42,10 +42,11 @@ const Login = ({handleClickOpen, setIsLogined, handleClose}) => {
   const onSubmit = (event) => {
     event.preventDefault();
     if(values.email === data.email && values.password === data.password) {
+      alert('로그인 성공');
       setIsLogined(true);
-      handleClose()
+      handleClose();
     }else
-      alert('이메일 또는 비밀번호를 확인해주세요.')
+      alert('이메일 또는 비밀번호를 확인해주세요.');
   }
 
   return (
@@ -124,7 +125,6 @@ const Login = ({handleClickOpen, setIsLogined, handleClose}) => {
               color="secondary"
               onClick={() => {handleClickOpen("register")}}
               fullWidth
-              //sx={{background: 'linear-gradient(to right bottom, #ff93dd, #2998f6)'}}
             >
               회원가입
             </Button>

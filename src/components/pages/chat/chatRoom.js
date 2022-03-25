@@ -2,8 +2,7 @@ import { useState, useCallback, useEffect, useContext, useRef } from "react";
 import { SocketContext, SOCKET_EVENT, makeMessage } from "../../../service/socket";
 import MessageForm from "./MessageForm";
 
-
-function ChatRoom({ nickname }) {
+function ChatRoom({ nickname, handleClose }) {
     const [messages, setMessages] = useState([]);
     const chatWindow = useRef(null);
     const socket = useContext(SocketContext);
@@ -43,6 +42,7 @@ function ChatRoom({ nickname }) {
             <div className="text-box">
                 <span>{nickname}</span> 님 환영합니다!
             </div>
+
             <div
                 className="chat-window card"
                 ref={chatWindow}
@@ -59,7 +59,7 @@ function ChatRoom({ nickname }) {
                 })}
             </div>
             <MessageForm nickname={nickname} />
-        </div>
+        </div >
     );
 }
 

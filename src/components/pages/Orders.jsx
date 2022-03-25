@@ -23,7 +23,7 @@ export default function Orders() {
       <aside>
         <div className="empty">
           <div className="title">아직 어떤 주문도 받지 않았습니다.</div>
-          <div className="subtitle">주문을 추가하려면 "+"를 클릭하십시오.</div>
+          <div className="subtitle">주문을 추가하려면 "구매"를 클릭하십시오.</div>
         </div>
       </aside>
     );
