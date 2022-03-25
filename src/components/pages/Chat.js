@@ -2,10 +2,11 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import NicknameForm from "./chat/NicknameForm";
 import ChatRoom from "./chat/chatRoom";
 import { socket, SocketContext, SOCKET_EVENT } from "../../service/socket";
+import { Box } from "@mui/material";
 
-function Chat() {
+function Chat({ handleClose }) {
     const prevNickname = useRef(null); // prevNickname 변경은 컴포넌트를 리렌더링 하지않습니다.
-    const [nickname, setNickname] = useState("");
+    const [nickname, setNickname] = useState("OOO");
 
     useEffect(() => {
         return () => { // App 컴포넌트 unmount시 실행
@@ -36,12 +37,14 @@ function Chat() {
     );
 
     return (
-        <SocketContext.Provider value={socket}>
-            <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-                <NicknameForm handleSubmitNickname={handleSubmitNickname} />
-                <ChatRoom nickname={nickname} />
-            </div>
-        </SocketContext.Provider>
+        <Box>
+            <SocketContext.Provider value={socket} >
+                <div className="d-flex flex-column justify-content-center align-items-center vh-100">
+                    <NicknameForm handleSubmitNickname={handleSubmitNickname} handleClose={handleClose} />
+                    <ChatRoom nickname={nickname} />
+                </div>
+            </SocketContext.Provider>
+        </Box>
     );
 }
 

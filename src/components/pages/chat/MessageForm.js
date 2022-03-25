@@ -32,9 +32,9 @@ function MessageForm({ nickname }) {
 
     return (
         <form className="card">
-            <div className="d-flex flex-row align-items-center">
+            <div className="d-flex flex-row">
                 <textarea
-                    className="form-control"
+                    className="form-control chat-input"
                     maxLength={400}
                     autoFocus
                     value={typingMessage}

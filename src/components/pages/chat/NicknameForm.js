@@ -1,6 +1,8 @@
 import { useState, useCallback } from "react";
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
-function NicknameForm({ handleSubmitNickname }) {
+function NicknameForm({ handleSubmitNickname, handleClose }) {
     const [nickname, setNickname] = useState("");
 
     const handleChangeNickname = useCallback(event => {
@@ -13,9 +15,9 @@ function NicknameForm({ handleSubmitNickname }) {
     }, [handleSubmitNickname, nickname]);
 
     return (
-        <form className="d-flex">
-            <div className="card d-flex flex-row align-items-center">
-                <label htmlFor="user-name-input" style={{ width: 60 }}>
+        <form className="d-flex nickArea">
+            <div className="card d-flex flex-row ">
+                <label className="nickBox" htmlFor="user-name-input" style={{ width: 70 }}>
                     닉네임
                 </label>
                 <input
@@ -28,12 +30,21 @@ function NicknameForm({ handleSubmitNickname }) {
                 />
                 <button
                     type="button"
-                    className="btn btn-primary send-btn"
+                    className="btn btn-primary nick-btn"
                     value="확인"
                     onClick={handleSubmit}
                 >
                     확인
                 </button>
+            </div>
+            <div className="closeBtn-Box">
+                <IconButton
+                    edge="end"
+                    sx={{ margin: 0 }}
+                    className='closeBtn'
+                >
+                    <CloseIcon onClick={() => handleClose()} sx={{ fontSize: 50 }} />
+                </IconButton>
             </div>
         </form>
     );
