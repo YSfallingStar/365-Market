@@ -36,7 +36,9 @@ const Layout = () => {
         <Box>
           <Button 
             variant="text" 
-            onClick={() => {handleClickOpen("logout")}}
+            onClick={() => {
+              setIsLogined(false);
+            }}
             sx={{mr: 2}}
             color='neutral'
           >
