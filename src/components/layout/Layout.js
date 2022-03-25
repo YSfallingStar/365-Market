@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Login from './../pages/Login';
 import Register from './../pages/Register';
 import Location from '../pages/Location';
+import Chat from './../pages/Chat';
 
 const Layout = () => {
   const [isLogined, setIsLogined] = useState(false); // 로그인 여부
@@ -33,6 +34,16 @@ const Layout = () => {
     if (isLogined) {
       return (
         <Box>
+          <Button 
+            variant="text" 
+            onClick={() => {
+              setIsLogined(false);
+            }}
+            sx={{mr: 2}}
+            color='neutral'
+          >
+            로그아웃
+          </Button>
           <Button
             variant='contained'
             onClick={() => { handleClickOpen("location") }}
@@ -82,13 +93,15 @@ const Layout = () => {
           //sx={{mb: 3}}
           >
             {condition === 'location' ? '지역 선택' : null}
+            {condition === 'profile' ? '프로필 설정': null}
+            {condition === 'chat' ? '채팅': null}
           </ModalTitle>
           <ModalContent>
             {
-              (function () {
-                if (condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
-                if (condition === 'register') return <Register handleClickOpen={handleClickOpen} />
-                if (condition === 'location') return <Location handleLocationClick={handleLocationClick} />
+              (function() {
+                if(condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
+                if(condition === 'register') return <Register handleClickOpen={handleClickOpen}/>
+                if(condition === 'location') return <Location handleLocationClick={handleLocationClick}/>
               })()
             }
           </ModalContent>
