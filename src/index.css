@@ -330,6 +330,7 @@ hr {
 .prototype .prototype__body .prototype__desc {
 	font-size: 0.8rem;
 	padding-bottom: 0.8rem;
+	margin: 0 10px;
 }
 
 .prototype__artwork {
@@ -692,7 +693,7 @@ hr {
 }
 
 .empty .subtitle {
-  font-size: 0.9rem;
+	font-size: 0.9rem;
 }
 /* 프로필 */
 .input-file-button {
@@ -708,14 +709,14 @@ hr {
 
 /* chat */
 #root {
-  min-height: 100vh;
-  background-color: #f8f9fa;
+	min-height: 100vh;
+	background-color: #f8f9fa;
 }
 .nickArea {
 	flex-direction: row;
 }
 button.with-icon {
-  display: flex;
+	display: flex;
 }
 .nickBox {
 	display: flex;
@@ -723,34 +724,34 @@ button.with-icon {
 	align-items: center;
 }
 .w300 {
-  width: 300px;
-  margin-left: 10px;
+	width: 300px;
+	margin-left: 10px;
 }
 
 .message-nickname {
-  font-weight: bold;
-  margin-right: 4px;
+	font-weight: bold;
+	margin-right: 4px;
 }
 .chat-input {
 	width: 95%;
 }
 .nick-btn {
-  height: 38px;
-  margin-left: 6px;
-  background: linear-gradient(to right bottom, #ff93dd, #2998f6);
-  border: none;
-  color: white;
-  justify-content: center;
-  align-items: center;
+	height: 38px;
+	margin-left: 6px;
+	background: linear-gradient(to right bottom, #ff93dd, #2998f6);
+	border: none;
+	color: white;
+	justify-content: center;
+	align-items: center;
 }
 .send-btn {
-  height: 60px;
-  margin-left: 6px;
-  background: linear-gradient(to right bottom, #ff93dd, #2998f6);
-  border: none;
-  color: white;
-  justify-content: center;
-  align-items: center;
+	height: 60px;
+	margin-left: 6px;
+	background: linear-gradient(to right bottom, #ff93dd, #2998f6);
+	border: none;
+	color: white;
+	justify-content: center;
+	align-items: center;
 }
 .closeBtn-Box {
 	position: relative;
@@ -764,26 +765,26 @@ button.with-icon {
 }
 
 .card {
-  padding: 14px;
+	padding: 14px;
 }
 
 .text-box {
-  display: flex;
-  padding: 6px;
-  background: linear-gradient(to right bottom, #ff93dd, #2998f6);
-  color: white;
-  justify-content: center;
+	display: flex;
+	padding: 6px;
+	background: linear-gradient(to right bottom, #ff93dd, #2998f6);
+	color: white;
+	justify-content: center;
 	align-items: center;
 }
 
 .time {
-  margin-left: 4px;
-  color: #aaa;
-  font-size: 13px;
-  line-height: 2;
+	margin-left: 4px;
+	color: #aaa;
+	font-size: 13px;
+	line-height: 2;
 }
 
 .chat-window {
-  height: 400px;
-  overflow-y: auto;
+	height: 400px;
+	overflow-y: auto;
 }
