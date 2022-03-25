@@ -25,16 +25,13 @@ class ImageSlider extends Component {
             <div style={imgBoxStyle}>
                 <Slider {...settings}>
                     <div>
-                        <img alt="t1" src={require('../asset/images/t1.png')} style={imgStyle} />
+                        <img alt="" src={require('../asset/images/u1.jpg')} style={imgStyle} />
                     </div>
                     <div>
-                        <img alt="t2" src={require('../asset/images/t2.png')} style={imgStyle} />
+                        <img alt="" src={require('../asset/images/u2.jpg')} style={imgStyle} />
                     </div>
                     <div>
-                        <img alt="t3" src={require('../asset/images/t3.png')} style={imgStyle} />
-                    </div>
-                    <div>
-                        <img alt="t4" src={require('../asset/images/t4.png')} style={imgStyle} />
+                        <img alt="" src={require('../asset/images/u3.jpg')} style={imgStyle} />
                     </div>
                 </Slider>
             </div >
