@@ -82,7 +82,8 @@ export default function Prototypes() {
       </Grid>
       <div className="prototypes">
         {prototypes.map((prototype) => {
-          const { id, thumbnail, title, price, desc, pieUrl } = prototype;
+          const { id, thumbnail, title, price, desc } = prototype;
+          
           const click = () => {
             addToOrder(id);
           };
@@ -121,7 +122,12 @@ export default function Prototypes() {
                   {title}
                 </div>
                 <p className="prototype__price">{price}원</p>
-                <p className="prototype__desc">{desc}</p>
+                <div className="prototype__desc">
+                  상품명: <span>{desc.name}</span><br/><br/>
+                  지역: <span>{desc.location}</span><br/><br/>
+                  게시 시간: <span>{desc.uspanloadDate}</span><br/><br/>
+                  물물 교환 여부: <span>{desc.barter ? 'O' : 'X'}</span>
+                </div>
               </div>
             </div>
           );
