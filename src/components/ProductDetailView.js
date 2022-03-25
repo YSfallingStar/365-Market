@@ -4,15 +4,9 @@ import { Grid, Avatar, Button } from '@mui/material';
 import { Typography } from '@mui/material';
 import ImageSlider from './ImageSlider';
 
-const ProductDetailView = () => {
-    const [open, setOpen] = useState(true);
-
-    const handleClose = () => {
-        setOpen(false);
-    };
-
+const ProductDetailView = (props) => {
     return (
-        <Dialog open={open} onClose={handleClose} maxWidth="lg">
+        <Dialog open={props.isOpen} onClose={props.handleClose} maxWidth="lg">
             <DialogContent>
                 <Grid
                     container
@@ -26,7 +20,7 @@ const ProductDetailView = () => {
                             paddingRight: "0.05rem"
                         }}
                     >
-                        <ImageSlider width="30%" />
+                        <ImageSlider width="30%" index={0} />
                     </Grid>
 
                     {/* 게시자 및 게시글 정보 */}
@@ -47,13 +41,13 @@ const ProductDetailView = () => {
                             <Avatar src="../asset/images/t1.png" />
                             &nbsp;
                             <Typography variant="subtitle1" gutterBottom component="div" style={{ margin: "0" }}>
-                                닉네임
+                                {props.board.name}
                             </Typography>
                         </Grid>
                         {/* 게시글 정보 */}
                         <Grid item xs={6} style={{ textAlign: "right" }}>
                             <Typography variant="subtitle1" gutterBottom component="div" style={{ margin: "0" }}>
-                                2022.03.22
+                                {props.board.date}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -61,7 +55,7 @@ const ProductDetailView = () => {
                     {/* 제목 */}
                     <Grid item xs={12}>
                         <Typography variant="h5" gutterBottom component="div">
-                            제목
+                            {props.board.title}
                         </Typography>
                     </Grid>
 
@@ -87,11 +81,11 @@ const ProductDetailView = () => {
                             >
 
                                 <Button variant="outlined" disabled style={{ color: "black" }}>
-                                    판매
+                                    {props.board.condition}
                                 </Button>
                                 &nbsp;&nbsp;
                                 <Typography variant="subtitle1" gutterBottom component="div" style={{ margin: "0" }}>
-                                    300,000
+                                    {props.board.price}
                                 </Typography>
                             </Grid>
                             <Grid
@@ -105,7 +99,7 @@ const ProductDetailView = () => {
                                 </Button>
                                 &nbsp;&nbsp;
                                 <Typography variant="subtitle1" gutterBottom component="div" style={{ margin: "0" }}>
-                                    O
+                                    {props.board.isExchange}
                                 </Typography>
                             </Grid>
                         </Grid>
@@ -115,10 +109,7 @@ const ProductDetailView = () => {
                                 요청사항
                             </Button>
                             <Typography variant="body1" gutterBottom style={{ margin: "0.5rem 0 0 1rem" }}>
-                                요청 내용 요청 내용 요청 내용 요청 내용 요청 내용 요청 내용 요청 내용 요청 내용 요청 내용 요청 내용<br />
-                                요청 내용 요청 내용 요청 내용<br />
-                                요청 내용 요청 내용 요청 내용 요청 내용 요청 내용 요청 내용<br />
-                                요청 내용 요청 내용 요청 내용<br />
+                                {props.board.requestInfo}
                             </Typography>
                         </Grid>
                     </Grid>
@@ -126,16 +117,13 @@ const ProductDetailView = () => {
                     {/* 상품 상세 내용 */}
                     <Grid item xs={12}>
                         <Typography variant="body1" gutterBottom>
-                            상품 내용 상품 내용 상품 내용 상품 내용 상품 내용 상품 내용 상품 내용 상품 내용 상품 내용 상품 내용<br />
-                            상품 내용 상품 내용 상품 내용<br />
-                            상품 내용 상품 내용 상품 내용 상품 내용 상품 내용 상품 내용<br />
-                            상품 내용 상품 내용 상품 내용<br />
+                            {props.board.productInfo}
                         </Typography>
                     </Grid>
                 </Grid>
             </DialogContent>
             <DialogActions>
-                <Button variant="contained" onClick={handleClose}>
+                <Button variant="contained" onClick={props.handleClose}>
                     닫기
                 </Button>
             </DialogActions>
