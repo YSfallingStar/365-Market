@@ -34,6 +34,14 @@ const Layout = () => {
     if(isLogined){
       return (
         <Box>
+          <Button 
+            variant="text" 
+            onClick={() => {handleClickOpen("logout")}}
+            sx={{mr: 2}}
+            color='neutral'
+          >
+            로그아웃
+          </Button>
           <Button
             variant='contained'
             onClick={() => {handleClickOpen("location")}}
