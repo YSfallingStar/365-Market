@@ -1,8 +1,5 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
@@ -12,8 +9,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { ThemeProvider } from '@mui/material/styles';
-import { theme } from '../../layout/Theme';
 
 // 모달 창 
 const style = {
@@ -59,58 +54,40 @@ const rows = [
     createData('서든 내전 멤버 구함', '게임', '서든 대룰로 55 하실분 연락주세요', '13:17'),
     createData('편의점에 참맛 후랑크 파나요?', '음식', '참맛 후랑크 오랜만에 먹고 싶은데 파는곳을 못찾겠네요ㅜㅜ', '10:57'),
 ];
-function Community(props) {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+const Community = () => {
     return (
-        <div>
-            <ThemeProvider theme={theme}>
-                <Stack>
-                    <Button variant="contained" size='large' color='secondary' sx={{ background: 'linear-gradient(to right bottom, #ff93dd, #2998f6)' }} onClick={handleOpen}>커뮤니티</Button>
-                </Stack><br /><br />
-            </ThemeProvider>
-            <div>
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            커뮤니티
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 4 }}>
-                            <TableContainer component={Paper}>
-                                <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                                    <TableHead>
-                                        <TableRow>
-                                            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                                            <StyledTableCell align="right">category</StyledTableCell>
-                                            <StyledTableCell align="right">comment</StyledTableCell>
-                                            <StyledTableCell align="right">time</StyledTableCell>
-                                        </TableRow>
-                                    </TableHead>
-                                    <TableBody>
-                                        {rows.map((row) => (
-                                            <StyledTableRow key={row.name}>
-                                                <StyledTableCell component="th" scope="row">
-                                                    {row.name}
-                                                </StyledTableCell>
-                                                <StyledTableCell align="right">{row.category}</StyledTableCell>
-                                                <StyledTableCell align="right">{row.comment}</StyledTableCell>
-                                                <StyledTableCell align="right">{row.time}</StyledTableCell>
-                                            </StyledTableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
-                            </TableContainer>
-                        </Typography>
-                    </Box>
-                </Modal>
-            </div>
-        </div>
+
+        <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+                커뮤니티
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 4 }}>
+                <TableContainer component={Paper}>
+                    <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                        <TableHead>
+                            <TableRow>
+                                <StyledTableCell>Dessert (100g serving)</StyledTableCell>
+                                <StyledTableCell align="right">category</StyledTableCell>
+                                <StyledTableCell align="right">comment</StyledTableCell>
+                                <StyledTableCell align="right">time</StyledTableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <StyledTableRow key={row.name}>
+                                    <StyledTableCell component="th" scope="row">
+                                        {row.name}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">{row.category}</StyledTableCell>
+                                    <StyledTableCell align="right">{row.comment}</StyledTableCell>
+                                    <StyledTableCell align="right">{row.time}</StyledTableCell>
+                                </StyledTableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Typography>
+        </Box>
     );
 }
 

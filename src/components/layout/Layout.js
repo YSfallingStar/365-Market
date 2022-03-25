@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../../asset/styles/Layout.css'
 import { Outlet } from 'react-router-dom';
 import { Box, Button } from '@mui/material';
@@ -30,31 +30,31 @@ const Layout = () => {
 
   // topMenu 오른쪽 영역
   const topMenu = () => {
-    if(isLogined){
+    if (isLogined) {
       return (
         <Box>
           <Button
             variant='contained'
-            onClick={() => {handleClickOpen("location")}}
+            onClick={() => { handleClickOpen("location") }}
           >
             {location}
           </Button>
         </Box>
       )
-    }else{
+    } else {
       return (
         <Box>
-          <Button 
-            variant="text" 
-            onClick={() => {handleClickOpen("login")}}
-            sx={{mr: 2}}
+          <Button
+            variant="text"
+            onClick={() => { handleClickOpen("login") }}
+            sx={{ mr: 2 }}
             color='neutral'
           >
             로그인
           </Button>
-          <Button 
-            variant="contained" 
-            onClick={() => {handleClickOpen("register")}}
+          <Button
+            variant="contained"
+            onClick={() => { handleClickOpen("register") }}
           >
             회원가입
           </Button>
@@ -65,9 +65,9 @@ const Layout = () => {
 
   return (
     <div className='wrapper'>
-      <Header topMenu={topMenu}/>
+      <Header topMenu={topMenu} />
       <main className='content'>
-        <Outlet/>
+        <Outlet handleClickOpen={handleClickOpen} />
         {/* 모달 */}
         <Modal
           onClose={handleClose}
@@ -76,25 +76,25 @@ const Layout = () => {
           maxWidth='md'
           fullWidth={true}
         >
-          <ModalTitle 
-            id="modal" 
+          <ModalTitle
+            id="modal"
             onClose={handleClose}
-            //sx={{mb: 3}}
+          //sx={{mb: 3}}
           >
             {condition === 'location' ? '지역 선택' : null}
           </ModalTitle>
           <ModalContent>
             {
-              (function() {
-                if(condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
-                if(condition === 'register') return <Register handleClickOpen={handleClickOpen}/>
-                if(condition === 'location') return <Location handleLocationClick={handleLocationClick}/>
+              (function () {
+                if (condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
+                if (condition === 'register') return <Register handleClickOpen={handleClickOpen} />
+                if (condition === 'location') return <Location handleLocationClick={handleLocationClick} />
               })()
             }
           </ModalContent>
         </Modal>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

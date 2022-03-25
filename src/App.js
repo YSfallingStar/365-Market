@@ -6,7 +6,7 @@ import Layout from './components/layout/Layout';
 import Home from './components/pages/Home';
 import Community from './components/pages/Community';
 import Mypage from './components/pages/Mypage';
-import Chat from './components/pages/Chat';
+import ChatList from './components/pages/ChatList';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/community" element={<Community />} />
-            <Route path="/chat" element={<Chat />} />
+            <Route path="/chat" element={<ChatList />} />
             <Route path="/myPage" element={<Mypage />} />
           </Route>
         </Routes>
