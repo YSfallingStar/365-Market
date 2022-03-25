@@ -78,10 +78,13 @@ const ProductRegister = (props) => {
                         {/* 이미지 */}
                         <Grid
                             item xs={5}
+                            container
+                            justifyContent="center"
                             style={{
                                 alignSelf: "center"
                             }}>
-                            <ImageSlider width="95%" index={0} />
+                            {/* <ImageSlider width="95%" index={0} /> */}
+                            <Button variant="outlined" size="large">이미지 등록</Button>
                         </Grid>
                         {/* 등록 폼 */}
                         <Grid item xs={7}>
@@ -107,7 +110,6 @@ const ProductRegister = (props) => {
                                 item xs={12}
                                 container
                                 direction="row"
-                                justifyContent="space-between"
                                 alignItems="center"
                                 style={{
                                     marginTop: "0.5rem"
@@ -115,11 +117,16 @@ const ProductRegister = (props) => {
                             >
                                 <Grid item xs={3}>
                                     <Button variant="outlined" size="large" disabled style={{ color: "black" }}>
-                                        상품 이름
+                                        제　 　목
                                     </Button>
                                 </Grid>
-                                <Grid item xs={9}>
-                                    <TextField id="standard-basic" label="상품 이름 입력" variant="standard"
+                                <Grid
+                                    item xs={8}
+                                    style={{
+                                        marginLeft: "1.5rem"
+                                    }}
+                                >
+                                    <TextField id="standard-basic" label="제목 입력" variant="standard"
                                         style={{
                                             width: "100%",
                                             margin: "0",
@@ -143,7 +150,7 @@ const ProductRegister = (props) => {
                                         구　 　분
                                     </Button>
                                 </Grid>
-                                <Grid item xs={6}>
+                                <Grid item xs={5}>
                                     <FormControl>
                                         <RadioGroup
                                             row
