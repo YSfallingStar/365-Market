@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import logo from '../../asset/images/logo.png';
+import logo from '../../../asset/images/logo.png';
 import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
@@ -96,6 +96,7 @@ const Register = ({handleClickOpen}) => {
         setValidate((prevState) => ({...prevState, emailError: true, emailMsg: '이미 사용중인 이메일입니다.'}));
       }else{
         setValidate((prevState) => ({...prevState, emailError: false, emailMsg: '사용 가능한 이메일입니다.'}));
+        setValidate((prevState) => ({...prevState, emailChecked: true}));
       }
     }
   }
@@ -111,6 +112,7 @@ const Register = ({handleClickOpen}) => {
 
     // 이메일 유효성 체크
     if(validate.emailError || !validate.emailChecked){
+      console.log(validate.emailChecked)
       setValidate((prevState) => ({...prevState, emailError: true, emailMsg: '이메일을 확인해주세요.'}));
     }
 

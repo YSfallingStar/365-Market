@@ -5,10 +5,9 @@ import { Box, Button } from '@mui/material';
 import { Modal, ModalTitle, ModalContent } from './Modal';
 import Header from './Header';
 import Footer from './Footer';
-import Login from './../pages/Login';
-import Register from './../pages/Register';
+import Login from './../pages/auth/Login';
+import Register from './../pages/auth/Register';
 import Location from '../pages/Location';
-import Chat from './../pages/Chat';
 
 const Layout = () => {
   const [isLogined, setIsLogined] = useState(false); // 로그인 여부
