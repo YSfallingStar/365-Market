@@ -36,7 +36,11 @@ const Layout = () => {
           <Button 
             variant="text" 
             onClick={() => {
-              setIsLogined(false);
+              let answer = window.confirm('로그아웃 하시겠습니까?');
+              if(answer){
+                setIsLogined(false);
+                sessionStorage.removeItem("member"); // 삭제
+              }
             }}
             sx={{mr: 2}}
             color='neutral'
@@ -100,7 +104,7 @@ const Layout = () => {
               (function() {
                 if(condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
                 if(condition === 'register') return <Register handleClickOpen={handleClickOpen}/>
-                if(condition === 'location') return <Location handleLocationClick={handleLocationClick}/>
+                if(condition === 'location') return <Location handleLocationClick={handleLocationClick} location={location} />
               })()
             }
           </ModalContent>

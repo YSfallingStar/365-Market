@@ -45,6 +45,7 @@ const Login = ({handleClickOpen, setIsLogined, handleClose}) => {
       alert('로그인 성공');
       setIsLogined(true);
       handleClose();
+      sessionStorage.setItem("member", values.email ); // 저장
     }else
       alert('이메일 또는 비밀번호를 확인해주세요.');
   }
