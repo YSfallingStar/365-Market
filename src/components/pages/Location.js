@@ -1,28 +1,39 @@
 import React from 'react';
-import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import '../../asset/styles/Location.css'
+import Divider from '@mui/material/Divider';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-
-const Location = ({handleLocationClick}) => {
+const Location = ({handleLocationClick, location}) => {
   return (
     <Stack
       direction="column"
       spacing={2}
       sx={{mx: 3}}
     >
-      <Item className='location' variant="outlined" onClick={() => handleLocationClick('역삼동')}>서울특별시 강남구 역삼동</Item>
-      <Item className='location' variant="outlined" onClick={() => handleLocationClick('청담동')}>서울특별시 강남구 청담동</Item>
+      <Button 
+        className='location' 
+        variant="outlined"
+        sx={location === '역삼동' ? {bgcolor: 'primary.main', color: '#fff !important'} : null}
+        disabled = {location === '역삼동' ? true : false}
+        onClick={() => handleLocationClick('역삼동')}
+      >
+        서울특별시 강남구 역삼동
+      </Button>
+      <Button 
+        className='location' 
+        variant="outlined"
+        sx={location === '청담동' ? {bgcolor: 'primary.main', color: '#fff !important'} : null}
+        disabled = {location === '청담동' ? true : false}
+        onClick={() => handleLocationClick('청담동')}
+      >
+        서울특별시 강남구 청담동
+      </Button>
       <Button variant="contained" color="secondary">지역 추가</Button>
+      <Box>
+        <Divider/>
+      </Box>
     </Stack>
   );
 };
