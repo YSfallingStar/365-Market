@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { Container } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import SalesHistory from './myPage/SalesHistory';
 import PurchaseHistory from './myPage/PurchaseHistory';
 import MyProfile from './myPage/MyProfile';
@@ -18,10 +18,9 @@ function Mypage() {
     }
     const handleClose = () => setOpen(false);
     return (
-        <div>
-            <br /><br /><br />
+        <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
             <ThemeProvider theme={theme}>
-                <Stack>
+                <Stack sx={{ width: '50%' }}>
                     <Button
                         variant="contained"
                         size='large'
@@ -33,7 +32,7 @@ function Mypage() {
                 </Stack><br /><br />
             </ThemeProvider>
             <ThemeProvider theme={theme}>
-                <Stack>
+                <Stack sx={{ width: '50%' }}>
                     <Button
                         variant="contained"
                         size='large'
@@ -45,7 +44,7 @@ function Mypage() {
                 </Stack><br /><br />
             </ThemeProvider>
             <ThemeProvider theme={theme}>
-                <Stack>
+                <Stack sx={{ width: '50%' }}>
                     <Button
                         variant="contained"
                         size='large'
@@ -57,7 +56,7 @@ function Mypage() {
                 </Stack><br /><br />
             </ThemeProvider>
             <ThemeProvider theme={theme}>
-                <Stack>
+                <Stack sx={{ width: '50%' }}>
                     <Button
                         variant="contained"
                         size='large'
@@ -87,7 +86,7 @@ function Mypage() {
                     }
                 </ModalContent>
             </Modal>
-        </div>
+        </Box>
     );
 }
 

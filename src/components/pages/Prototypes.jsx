@@ -45,7 +45,7 @@ export default function Prototypes() {
   const prototypes = usePrototypes();
   const { addToOrder } = useActions();
   return (
-    <main>
+    <div style={{margin: '50px 100px'}}>
       <Grid
         item xs={12}
         container
@@ -134,6 +134,6 @@ export default function Prototypes() {
         })}
         <ProductData index={1} isOpen={openPrdDetailView} handleClose={handleClosePrdDetailView} />
       </div>
-    </main>
+    </div>
   );
 }
