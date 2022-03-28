@@ -706,11 +706,20 @@ hr {
 	justify-content: center;
 	align-items: center;
 }
-
+.myPageBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 /* chat */
 #root {
 	min-height: 100vh;
 	background-color: #f8f9fa;
+}
+.chatListBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .nickArea {
 	flex-direction: row;
