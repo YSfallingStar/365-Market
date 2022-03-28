@@ -7,7 +7,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-01",
       title: "365마켓",
       artist: "Thomas Buisson",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '장난감',
+        location: '경기도 남양주시',
+        uploadDate: '11:42',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/Kids-story_1.mp4",
       price: 10000,
@@ -17,7 +22,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-02",
       title: "365마켓",
       artist: "Ahmed Amr",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/mockyapp.mp4",
       price: 20000,
@@ -27,7 +37,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-03",
       title: "365마켓",
       artist: "Dominik Kandravý",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '노트북',
+        location: '서울특별시 강남구',
+        uploadDate: '08:50',
+        barter: false,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/macOS_Folder_Concept_-_Folder_concept.mp4",
       price: 30000,
@@ -37,7 +52,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-04",
       title: "365마켓",
       artist: "Tony Kim",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '노트북',
+        location: '서울특별시 강남구',
+        uploadDate: '08:50',
+        barter: false,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/Translator.mp4",
       price: 40000,
@@ -47,7 +67,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-05",
       title: "365마켓",
       artist: "Tony Kim",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '모니터',
+        location: '서울특별시 강남구',
+        uploadDate: '08:50',
+        barter: false,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/In-car_voice_control.mp4",
       price: 50000,
@@ -57,7 +82,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-06",
       title: "365마켓",
       artist: "Richard Oldfield",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '노트북',
+        location: '서울특별시 강남구',
+        uploadDate: '08:50',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/The_Adventures_of_Proto.mp4",
       price: 60000,
@@ -67,7 +97,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-07",
       title: "365마켓",
       artist: "Mustafa Alabdullah",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/sunglasses_shop_app.mp4",
       price: 70000,
@@ -77,7 +112,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-08",
       title: "365마켓",
       artist: "Fredo Tan",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/minimalist-text-editor.mp4",
       price: 80000,
@@ -87,7 +127,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-09",
       title: "365마켓",
       artist: "Tony Kim",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/TV.mp4",
       price: 90000,
@@ -97,7 +142,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-10",
       title: "365마켓",
       artist: "Arpit Agrawal",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/Credit_Card_App.mp4",
       price: 90000,
@@ -108,7 +158,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-11",
       title: "365마켓",
       artist: "Changmo Kang",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/Whack_a_mole.mp4",
       price: 90000,
@@ -118,7 +173,12 @@ const AppStateProvider = ({ children }) => {
       id: "pp-12",
       title: "365마켓",
       artist: "Haerin Song",
-      desc: "상품 이름 : 장난감ㅤㅤㅤㅤㅤ 상세 지역 : 경기도 남양주시ㅤ게시 시간 : 11:42ㅤㅤㅤㅤㅤㅤ물물교환 여부 : O",
+      desc: {
+        name: '핸드폰',
+        location: '경기도 광주시',
+        uploadDate: '10:40',
+        barter: true,
+      },
       thumbnail:
         "https://prototype-shop.s3.ap-northeast-2.amazonaws.com/thumbnails/Voice_note_with_sound_wave.mp4",
       price: 90000,

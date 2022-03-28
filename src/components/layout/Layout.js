@@ -5,10 +5,9 @@ import { Box, Button } from '@mui/material';
 import { Modal, ModalTitle, ModalContent } from './Modal';
 import Header from './Header';
 import Footer from './Footer';
-import Login from './../pages/Login';
-import Register from './../pages/Register';
+import Login from './../pages/auth/Login';
+import Register from './../pages/auth/Register';
 import Location from '../pages/Location';
-import Chat from './../pages/Chat';
 
 const Layout = () => {
   const [isLogined, setIsLogined] = useState(false); // 로그인 여부
@@ -37,7 +36,11 @@ const Layout = () => {
           <Button 
             variant="text" 
             onClick={() => {
-              setIsLogined(false);
+              let answer = window.confirm('로그아웃 하시겠습니까?');
+              if(answer){
+                setIsLogined(false);
+                sessionStorage.removeItem("member"); // 삭제
+              }
             }}
             sx={{mr: 2}}
             color='neutral'
@@ -101,7 +104,7 @@ const Layout = () => {
               (function() {
                 if(condition === 'login') return <Login handleClickOpen={handleClickOpen} handleClose={handleClose} setIsLogined={setIsLogined} />
                 if(condition === 'register') return <Register handleClickOpen={handleClickOpen}/>
-                if(condition === 'location') return <Location handleLocationClick={handleLocationClick}/>
+                if(condition === 'location') return <Location handleLocationClick={handleLocationClick} location={location} />
               })()
             }
           </ModalContent>

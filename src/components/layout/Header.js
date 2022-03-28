@@ -47,76 +47,78 @@ const Header = ({topMenu}) => {
   }
 
   return (
-    <AppBar position="static" color="transparent">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Box 
-            onClick={() => window.location.href='/'}
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, height: '50px', cursor: 'pointer'}}
-          >
-            <img src={logo} alt="logo"/>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+    <header>
+      <AppBar position="static" color="transparent">
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Box 
+              onClick={() => window.location.href='/'}
+              sx={{ mr: 2, display: { xs: 'none', md: 'flex' }, height: '50px', cursor: 'pointer'}}
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
+              <img src={logo} alt="logo"/>
+            </Box>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                  display: { xs: 'block', md: 'none' },
+                }}
+              >
+                {pages.map((page) => (
+                  <MenuItem key={page.id} onClick={handleCloseNavMenu}>
+                    <Link to={page.url}>
+                      <Typography textAlign="center">{page.title}</Typography>
+                    </Link>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            {/* 반응형: md이상 */}
+            <Box 
+              onClick={() => window.location.href='/'}
+              sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, height: '50px'}}
+            >
+              <img src={logo} alt="logo" />
+            </Box>
+            <Tabs 
+              value={selectedTab}
+              onChange={handleTabChange}
+              sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                  <Link to={page.url}>
-                    <Typography textAlign="center">{page.title}</Typography>
-                  </Link>
-                </MenuItem>
+                <LinkTab key={page.id} label={page.title} url={page.url} />
               ))}
-            </Menu>
-          </Box>
-          {/* 반응형: md이상 */}
-          <Box 
-            onClick={() => window.location.href='/'}
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, height: '50px'}}
-          >
-            <img src={logo} alt="logo" />
-          </Box>
-          <Tabs 
-            value={selectedTab}
-            onChange={handleTabChange}
-            sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}
-          >
-            {pages.map((page) => (
-              <LinkTab key={page.id} label={page.title} url={page.url} />
-            ))}
-          </Tabs>
-          {/* 오른쪽 메뉴 */}
-          <Box sx={{ flexGrow: 0 }}>
-            {topMenu()}
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+            </Tabs>
+            {/* 오른쪽 메뉴 */}
+            <Box sx={{ flexGrow: 0 }}>
+              {topMenu()}
+            </Box>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </header>
   );
 };
 

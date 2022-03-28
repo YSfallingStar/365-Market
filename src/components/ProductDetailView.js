@@ -3,10 +3,32 @@ import { Dialog, DialogContent, DialogActions } from '@mui/material';
 import { Grid, Avatar, Button } from '@mui/material';
 import { Typography } from '@mui/material';
 import ImageSlider from './ImageSlider';
+import DialogTitle from '@mui/material/DialogTitle';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import Divider from '@mui/material/Divider';
 
 const ProductDetailView = (props) => {
     return (
-        <Dialog open={props.isOpen} onClose={props.handleClose} maxWidth="lg">
+        <Dialog open={props.isOpen} onClose={props.handleClose}>
+            <DialogTitle sx={{ m: 0, p: 2 }}>
+                상세 조회
+                {props.isOpen ? (
+                    <IconButton
+                    aria-label="close"
+                    onClick={props.handleClose}
+                    sx={{
+                        position: 'absolute',
+                        right: 8,
+                        top: 8,
+                        color: (theme) => theme.palette.grey[500],
+                    }}
+                    >
+                    <CloseIcon />
+                    </IconButton>
+                ) : null}
+            </DialogTitle>
+            <Divider/>
             <DialogContent>
                 <Grid
                     container
@@ -122,11 +144,6 @@ const ProductDetailView = (props) => {
                     </Grid>
                 </Grid>
             </DialogContent>
-            <DialogActions>
-                <Button variant="contained" onClick={props.handleClose}>
-                    닫기
-                </Button>
-            </DialogActions>
         </Dialog >
     );
 };

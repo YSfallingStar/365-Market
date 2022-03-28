@@ -29,8 +29,8 @@ export default function AlignItemsList() {
     const handleClose = () => setOpen(false);
 
     return (
-        <Box sx={{ m: 'auto', p: 3, justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-            <List sx={{ minwidth: '100%', maxWidth: 800, bgcolor: 'background.paper', justifyContent: "center", alignItems: "center" }}>
+        <Box sx={{ p: 3, justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+            <List sx={{ m: 'auto', minwidth: '100%', maxWidth: 800, bgcolor: 'background.paper', justifyContent: "center", alignItems: "center" }}>
                 <ListItem alignItems="flex-start">
                     <ListItemAvatar>
                         <Avatar alt="Remy Sharp" src={park} />
